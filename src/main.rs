@@ -1,5 +1,7 @@
 #![allow(non_snake_case)]
 
+use std::time::{Instant};
+
 /*
     Find the sum of all multiples of 3 or 5 below 1000
 */
@@ -10,6 +12,7 @@ fn isMultiple(num: i32) -> bool {
 }
 
 fn main() {
+    let start = Instant::now();
     let mut sum_of_multiples = 0; 
 
     //loop from 0..999
@@ -22,5 +25,6 @@ fn main() {
             };
     }
     println!("Sum is {}", sum_of_multiples);
-
+    let duration = start.elapsed();
+    println!("Time elapsed in expensive_function() is: {:?}", duration);
 }
